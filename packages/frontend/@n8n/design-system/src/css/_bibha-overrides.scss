@@ -1,0 +1,262 @@
+// Bibha AI Custom Colors - Full Green Theme
+:root {
+	// Primary Bibha Green Color Palette
+	--color-primary: #00a76f !important;
+	--color-primary-shade-1: #00875a !important;
+	--color-primary-shade-2: #064 !important;
+	--color-primary-tint-1: #33b988 !important;
+	--color-primary-tint-2: #66caa2 !important;
+	--color-primary-tint-3: #99dcbb !important;
+	--color-primary-light: #e6f7f2 !important;
+	--color-primary-light-2: #ccefe5 !important;
+
+	// Update all button colors to green
+	--color-button-primary-background: #00a76f !important;
+	--color-button-primary-background-hover: #00875a !important;
+	--color-button-primary-background-active: #064 !important;
+	--color-button-primary-focus-outline: rgba(0, 167, 111, 0.3) !important;
+	--color-button-primary-font: white !important;
+
+	// Success colors (keep green)
+	--color-success: #00a76f !important;
+	--color-success-shade-1: #00875a !important;
+	--color-success-light: #e6f7f2 !important;
+	--color-success-light-2: #ccefe5 !important;
+	--color-success-tint-1: #33b988 !important;
+	--color-success-tint-2: #66caa2 !important;
+
+	// Interactive elements
+	--color-info: #00a76f !important;
+	--color-info-tint-1: #33b988 !important;
+	--color-info-tint-2: #66caa2 !important;
+
+	// Links
+	--color-link: #00a76f !important;
+	--color-link-hover: #00875a !important;
+
+	// Selection colors
+	--color-selected: rgba(0, 167, 111, 0.12) !important;
+	--color-selected-hover: rgba(0, 167, 111, 0.18) !important;
+
+	// Focus colors
+	--color-focus: #00a76f !important;
+	--color-focus-light: rgba(0, 167, 111, 0.1) !important;
+}
+
+// Element Plus Button overrides - All button variants
+.el-button--primary,
+.el-button--success {
+	background-color: #00a76f !important;
+	border-color: #00a76f !important;
+	color: white !important;
+
+	&:hover,
+	&:focus {
+		background-color: #00875a !important;
+		border-color: #00875a !important;
+		color: white !important;
+	}
+
+	&:active {
+		background-color: #064 !important;
+		border-color: #064 !important;
+		color: white !important;
+	}
+
+	&.is-disabled {
+		background-color: #66caa2 !important;
+		border-color: #66caa2 !important;
+		color: white !important;
+	}
+}
+
+// Text buttons
+.el-button--text {
+	color: #00a76f !important;
+
+	&:hover,
+	&:focus {
+		color: #00875a !important;
+	}
+
+	&:active {
+		color: #064 !important;
+	}
+}
+
+// Default buttons with green outline
+.el-button--default {
+	&:hover,
+	&:focus {
+		border-color: #00a76f !important;
+		color: #00a76f !important;
+	}
+}
+
+// Links
+.el-link--primary,
+.el-link--success,
+.el-link--default:not(.is-disabled):hover {
+	color: #00a76f !important;
+
+	&:hover {
+		color: #00875a !important;
+	}
+}
+
+// Form elements
+.el-input__inner:focus,
+.el-textarea__inner:focus {
+	border-color: #00a76f !important;
+}
+
+.el-select .el-input.is-focus .el-input__inner {
+	border-color: #00a76f !important;
+}
+
+// Checkboxes and Radio buttons
+.el-checkbox__input.is-checked .el-checkbox__inner,
+.el-checkbox__input.is-indeterminate .el-checkbox__inner {
+	background-color: #00a76f !important;
+	border-color: #00a76f !important;
+}
+
+.el-radio__input.is-checked .el-radio__inner {
+	border-color: #00a76f !important;
+	background: #00a76f !important;
+}
+
+// Switches
+.el-switch.is-checked .el-switch__core {
+	border-color: #00a76f !important;
+	background-color: #00a76f !important;
+}
+
+// Tags
+.el-tag--primary {
+	background-color: rgba(0, 167, 111, 0.1) !important;
+	border-color: rgba(0, 167, 111, 0.2) !important;
+	color: #00a76f !important;
+}
+
+.el-tag--success {
+	background-color: rgba(0, 167, 111, 0.1) !important;
+	border-color: rgba(0, 167, 111, 0.2) !important;
+	color: #00a76f !important;
+}
+
+// Pagination
+.el-pagination button:hover {
+	color: #00a76f !important;
+}
+
+.el-pagination .is-active {
+	color: #00a76f !important;
+}
+
+.el-pager li.active {
+	color: #00a76f !important;
+}
+
+// Tabs
+.el-tabs__item.is-active {
+	color: #00a76f !important;
+}
+
+.el-tabs__active-bar {
+	background-color: #00a76f !important;
+}
+
+.el-tabs__item:hover {
+	color: #00a76f !important;
+}
+
+// Progress bars
+.el-progress-bar__inner {
+	background-color: #00a76f !important;
+}
+
+// Loading spinner
+.el-loading-spinner .circular circle {
+	stroke: #00a76f !important;
+}
+
+// Dropdown items
+.el-dropdown-menu__item:not(.is-disabled):hover {
+	background-color: rgba(0, 167, 111, 0.1) !important;
+	color: #00a76f !important;
+}
+
+// Menu items
+.el-menu-item.is-active,
+.el-submenu__title.is-active {
+	color: #00a76f !important;
+}
+
+.el-menu-item:hover,
+.el-submenu__title:hover {
+	background-color: rgba(0, 167, 111, 0.1) !important;
+}
+
+// Messages and Notifications
+.el-message--success {
+	background: #e6f7f2 !important;
+	border-color: #00a76f !important;
+
+	.el-message__content {
+		color: #00875a !important;
+	}
+}
+
+.el-notification--success {
+	background: #e6f7f2 !important;
+	border-color: #00a76f !important;
+
+	.el-notification__title,
+	.el-notification__content {
+		color: #00875a !important;
+	}
+}
+
+// N8n specific components
+.n8n-button--primary {
+	background-color: #00a76f !important;
+	color: white !important;
+
+	&:hover {
+		background-color: #00875a !important;
+	}
+
+	&:active {
+		background-color: #064 !important;
+	}
+}
+
+.n8n-link {
+	color: #00a76f !important;
+
+	&:hover {
+		color: #00875a !important;
+	}
+}
+
+// Workflow canvas elements
+.plus-endpoint {
+	&:hover {
+		fill: #00a76f !important;
+	}
+}
+
+.node-executing {
+	border-color: #00a76f !important;
+}
+
+// Execution status
+.execution-running {
+	color: #00a76f !important;
+}
+
+// Toast notifications
+.el-notification__icon.el-icon-success {
+	color: #00a76f !important;
+}

@@ -1,0 +1,23 @@
+# Dockerignore for Bibha build - includes dist directories
+**/*.md
+!**/THIRD_PARTY_LICENSES.md
+**/.env
+.cache
+assets
+node_modules
+packages/node-dev
+packages/**/node_modules
+packages/**/.turbo
+packages/**/*.test.*
+.git
+.github
+!.github/scripts
+*.tsbuildinfo
+docker/compose
+docker/**/Dockerfile
+.vscode
+packages/testing
+cypress
+# Don't ignore dist directories - we need them for the build
+!packages/frontend/editor-ui/dist
+!packages/frontend/@n8n/design-system/dist

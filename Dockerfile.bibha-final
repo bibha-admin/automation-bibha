@@ -1,0 +1,52 @@
+# Bibha AI Automation Studio - Final ARM64 Docker Image
+FROM --platform=linux/arm64 n8nio/n8n:latest
+
+USER root
+
+# Install tools for file replacement
+RUN apk add --no-cache rsync
+
+# Copy our themed frontend build files
+COPY packages/frontend/editor-ui/dist /tmp/editor-ui/
+COPY packages/frontend/@n8n/design-system/dist /tmp/design-system/
+
+# Replace n8n frontend with Bibha themed version
+RUN echo "🎨 Applying Bibha AI theme..." && \
+    # Replace editor-ui
+    EDITOR_UI_PATH="/usr/local/lib/node_modules/n8n/node_modules/.pnpm/n8n-editor-ui@file+packages+frontend+editor-ui/node_modules/n8n-editor-ui/dist" && \
+    if [ -d "$EDITOR_UI_PATH" ]; then \
+        echo "Found editor-ui at: $EDITOR_UI_PATH" && \
+        rm -rf "$EDITOR_UI_PATH"/* && \
+        cp -r /tmp/editor-ui/* "$EDITOR_UI_PATH/" && \
+        echo "✅ Editor UI replaced with Bibha theme"; \
+    fi && \
+    # Find and replace design-system
+    find /usr/local/lib/node_modules/n8n -path "*/@n8n+design-system*/dist" -type d | while read dir; do \
+        echo "Replacing design-system at: $dir" && \
+        rm -rf "$dir"/* && \
+        cp -r /tmp/design-system/* "$dir/" && \
+        echo "✅ Design system replaced"; \
+    done && \
+    # Also check for design-system in root node_modules
+    if [ -d "/usr/local/lib/node_modules/@n8n/design-system/dist" ]; then \
+        echo "Also found design-system at root level" && \
+        rm -rf /usr/local/lib/node_modules/@n8n/design-system/dist/* && \
+        cp -r /tmp/design-system/* /usr/local/lib/node_modules/@n8n/design-system/dist/ && \
+        echo "✅ Root design-system replaced"; \
+    fi && \
+    # Clean up
+    rm -rf /tmp/editor-ui /tmp/design-system && \
+    # Fix permissions
+    chown -R node:node /usr/local/lib/node_modules
+
+USER node
+
+ENV N8N_PORT=5678
+ENV N8N_DIAGNOSTICS_ENABLED=false
+ENV N8N_PERSONALIZATION_ENABLED=false
+
+EXPOSE 5678
+
+LABEL org.opencontainers.image.title="Bibha AI Automation Studio"
+LABEL org.opencontainers.image.description="Workflow automation platform with Bibha AI green theme"
+LABEL org.opencontainers.image.vendor="Bibha Digital"

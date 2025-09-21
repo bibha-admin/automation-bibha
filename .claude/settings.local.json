@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm start:*)",
+      "Bash(pnpm dev:*)",
+      "Bash(chmod:*)",
+      "Bash(./build-bibha-docker.sh:*)",
+      "Bash(curl:*)",
+      "Bash(./bibha-build-complete.sh:*)",
+      "Bash(docker run:*)",
+      "Bash(docker logs:*)",
+      "Bash(./bibha-source-build.sh:*)",
+      "Bash(grep:*)",
+      "Bash(docker build:*)",
+      "Bash(./run-bibha-local.sh:*)",
+      "Bash(tar:*)",
+      "Bash(docker stop:*)",
+      "Bash(docker rm:*)",
+      "Bash(./build-and-run-bibha.sh:*)",
+      "Bash(./final-build-bibha.sh:*)",
+      "Bash(while ! grep -q \"Tasks:\" build.log)",
+      "Bash(do sleep:*)",
+      "Bash(done)",
+      "Bash(pgrep:*)",
+      "Bash(./deploy-bibha-arm64.sh:*)",
+      "Bash(./verify-theme.sh:*)",
+      "Bash(docker exec:*)",
+      "Bash(./build-bibha-final.sh:*)",
+      "Bash(bibha-final:latest)",
+      "Bash(docker start:*)",
+      "Bash(./docker-hub-deploy.sh:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
